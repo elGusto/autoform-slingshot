@@ -1,0 +1,13 @@
+<template name="afSlingshotFileInput">
+	<div class="form-group file-drop-container" data-schema-key="{{schemaKey}}">
+		<input type="file" class="hidden af-file-input" id="file-{{name}}" file-input="{{name}}">
+		<div class="file-drop well">
+			<p>Drop a file or <a href="#" class="open-file-browser-btn">select one from browser</a></p>
+		</div>
+	</div>
+	<div class="progress">
+    <div class="progress-bar" role="progressbar" aria-valuenow="{{progress}}" aria-valuemin="0" aria-valuemax="100" style="width: {{progress}}%;">
+      <span class="sr-only">{{progress}}% Complete</span>
+    </div>
+  </div>
+</template>
