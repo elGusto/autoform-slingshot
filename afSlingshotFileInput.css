@@ -1,0 +1,12 @@
+.file-info {
+	display: flex;
+	align-items: center;
+}
+.file-info span {
+	margin-top: -20px;
+	margin-left: 5px;
+}
+.file-thumbnail {
+	width: 50px;
+	display: inline;
+}

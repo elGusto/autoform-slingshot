@@ -1,13 +1,34 @@
 <template name="afSlingshotFileInput">
 	<div class="form-group file-drop-container" data-schema-key="{{schemaKey}}">
-		<input type="file" class="hidden af-file-input" id="file-{{name}}" file-input="{{name}}">
+		<input type="file" class="hidden af-file-input" id="file-{{name}}" file-input="{{name}}" multiple="{{multi}}">
 		<div class="file-drop well">
-			<p>Drop a file or <a href="#" class="open-file-browser-btn">select one from browser</a></p>
+			<p>
+				Drop a file or <a href="#" class="open-file-browser-btn">select one from your computer</a>
+				{{replaceText}}
+			</p>
 		</div>
 	</div>
-	<div class="progress">
-    <div class="progress-bar" role="progressbar" aria-valuenow="{{progress}}" aria-valuemin="0" aria-valuemax="100" style="width: {{progress}}%;">
-      <span class="sr-only">{{progress}}% Complete</span>
-    </div>
-  </div>
+  {{#each files}}
+  	<div class="file-info">
+			<div class="file-thumbnail">
+				{{#if fileIsImage}}
+				<div class="thumbnail"><img src="{{fileUrl}}" alt=""> </div>
+				{{else}}
+					<i class="fa fa-file"></i>
+				{{/if}}
+			</div>
+			<span>{{fileName}}</span>
+			{{#unless fileUploading}}
+				<span> <a href="#" class="delete-file" data-file-id="{{_id}}"> <i class="fa fa-trash"></i></a></span>
+			{{/unless}}
+		</div>
+		{{#if fileUploading}}
+			Uploading...
+			<div class="progress">
+		    <div class="progress-bar" role="progressbar" aria-valuenow="{{progress}}" aria-valuemin="0" aria-valuemax="100" style="width: {{progress}}%;">
+		      <span class="sr-only">{{progress}}% Complete</span>
+		    </div>
+		  </div>
+	  {{/if}}
+  {{/each}}
 </template>

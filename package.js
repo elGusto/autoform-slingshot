@@ -16,6 +16,7 @@ Package.onUse(function(api) {
     'ecmascript',
     'templating',
     'reactive-var',
+    'reactive-dict',
     'edgee:slingshot@0.7.1',
     'aldeed:autoform@5.0.0'
   ]);
@@ -23,8 +24,11 @@ Package.onUse(function(api) {
   api.addFiles([
     'afSlingshotFileInput.html',
     'afSlingshotFileInput.js',
+    'afSlingshotFileInput.css',
     'autoform.js'
   ], 'client');
+
+  api.export(['FileSchema']);
 });
 
 Package.onTest(function(api) {
