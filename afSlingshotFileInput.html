@@ -22,13 +22,13 @@
 				<span> <a href="#" class="delete-file" data-file-id="{{_id}}"> <i class="fa fa-trash"></i></a></span>
 			{{/unless}}
 		</div>
-		{{#if fileUploading}}
-			Uploading...
-			<div class="progress">
-		    <div class="progress-bar" role="progressbar" aria-valuenow="{{progress}}" aria-valuemin="0" aria-valuemax="100" style="width: {{progress}}%;">
-		      <span class="sr-only">{{progress}}% Complete</span>
-		    </div>
-		  </div>
-	  {{/if}}
   {{/each}}
+	{{#if fileUploading}}
+		Uploading...
+		<div class="progress">
+			<div class="progress-bar" role="progressbar" aria-valuenow="{{progress}}" aria-valuemin="0" aria-valuemax="100" style="width: {{progress}}%;">
+				<span class="sr-only">{{progress}}% Complete</span>
+			</div>
+		</div>
+	{{/if}}
 </template>
